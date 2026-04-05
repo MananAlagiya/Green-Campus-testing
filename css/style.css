@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    --primary: #00ff88;
+    --primary-glow: rgba(0, 255, 136, 0.4);
+    --secondary: #00d2ff;
+    --bg-dark: #050b0a;
+    --bg-card: rgba(255, 255, 255, 0.03);
+    --border-glass: rgba(255, 255, 255, 0.1);
+    --text-main: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --nav-height: 80px;
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Glassmorphism Utility */
+.glass {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+}
+
+/* Navigation */
+nav {
+    height: var(--nav-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+nav.scrolled {
+    background: rgba(5, 11, 10, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--secondary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    opacity: 0.8;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+    opacity: 1;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 0 20px;
+    background: radial-gradient(circle at center, rgba(0, 255, 136, 0.05) 0%, transparent 70%);
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px var(--primary-glow));
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin-bottom: 40px;
+}
+
+.btn-container {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 0 30px var(--primary-glow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 45px var(--primary-glow);
+}
+
+.btn-secondary {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 255, 136, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Sections */
+section {
+    padding: 100px 10%;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Grids */
+.focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.focus-card {
+    padding: 40px;
+    transition: var(--transition);
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.focus-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--primary);
+}
+
+.focus-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.focus-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.focus-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Impact Dashboard */
+.impact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.impact-stat {
+    text-align: center;
+    padding: 30px;
+}
+
+.stat-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary);
+    font-family: 'Orbitron';
+}
+
+.stat-label {
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+/* Animations */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Footer */
+footer {
+    background: #030605;
+    padding: 80px 10% 40px;
+    border-top: 1px solid var(--border-glass);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    max-width: 300px;
+}
+
+.footer-links h4 {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+.footer-bottom {
+    text-align: center;
+    color: var(--text-muted);
+    padding-top: 40px;
+    border-top: 1px solid var(--border-glass);
+    font-size: 0.85rem;
+}
+
+/* Mobile Toggle */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--text-main);
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .nav-links { display: none; }
+    .menu-toggle { display: block; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.8rem; }
+}

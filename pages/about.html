@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Green Campus Initiative</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .about-content { padding-top: 150px; min-height: 80vh; }
+        .hero-mini { height: 40vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 50px; }
+        @media (max-width: 800px) { .grid-2 { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav id="navbar" class="scrolled">
+        <a href="../index.html" class="logo">
+            <i class="fa-solid fa-leaf"></i> GREEN<span>CAMPUS</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="reduce.html">Reduce Plastic</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="recycling.html">Recycling</a></li>
+            <li><a href="awareness.html">Awareness</a></li>
+            <li><a href="get-involved.html">Involved</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="about-content section">
+        <div class="hero-mini">
+            <div>
+                <h1 class="section-title">🌍 Our Vision</h1>
+                <p class="section-subtitle">Building a Sustainable Future Together</p>
+            </div>
+        </div>
+
+        <div class="glass" style="padding: 50px; margin-bottom: 50px;">
+            <h2 style="color: var(--primary); margin-bottom: 20px;">The Challenge</h2>
+            <p style="margin-bottom: 20px;">Plastic pollution is one of the most pressing environmental challenges of our time. Universities, as hubs of innovation and learning, have a critical role to play in leading sustainable practices.</p>
+            <p>Our campus is committed to reducing plastic waste and promoting eco-friendly alternatives—creating a cleaner, greener environment for present and future generations.</p>
+        </div>
+
+        <div class="grid-2">
+            <div class="glass" style="padding: 40px;">
+                <h3 style="margin-bottom: 20px;"><i class="fa-solid fa-bullseye" style="color: var(--secondary);"></i> Our Mission</h3>
+                <p>To create a plastic-responsible campus where students, faculty, and staff actively contribute to reducing, reusing, and recycling plastic waste.</p>
+            </div>
+            <div class="glass" style="padding: 40px;">
+                <h3 style="margin-bottom: 20px;"><i class="fa-solid fa-heart-pulse" style="color: var(--primary);"></i> Why It Matters</h3>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--primary);"></i> Protect Ecosystems</li>
+                    <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--primary);"></i> Conserve Resources</li>
+                    <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--primary);"></i> Health Concerns (Microplastics)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-bottom">
+            &copy; 2026 Green Campus Initiative.
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        gsap.from('.glass', { opacity: 0, y: 30, duration: 1, stagger: 0.2 });
+    </script>
+</body>
+</html>
